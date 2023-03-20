@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Masyarakat;
+use Illuminate\Testing\Fluent\Concerns\Hash;
 use Illuminate\Http\Request;
 
 class MasyarakatController extends Controller
