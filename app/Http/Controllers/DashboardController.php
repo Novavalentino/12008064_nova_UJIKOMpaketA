@@ -14,9 +14,9 @@ class DashboardController extends Controller
         if(Auth::guard('masyarakat')->check()){
             return view('pengaduan.create');
         }elseif(Auth::guard('petugas')->user()->level=='admin'){
-            return view('view.admin');
+            return view('layout.admin');
         }else{
-            return view('view.petugas');
+            return view('layout.petugas');
         }
     }
 }

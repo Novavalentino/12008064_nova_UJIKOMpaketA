@@ -17,6 +17,11 @@
                 <b>Opps!</b> {{session('error')}}
             </div>
             @endif
+            @if ($message = Session::get('success'))
+                <div class="alert alert-success">
+                    <p>{{ $message }}</p>
+                </div>
+            @endif
             <form action="/login" method="post">
             @csrf
                 <div class="form-group">

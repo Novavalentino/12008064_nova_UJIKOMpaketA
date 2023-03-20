@@ -35,6 +35,10 @@
                     <label>Password</label>
                     <input type="password" name="password" class="form-control" placeholder="Password" required>
                 </div>
+                <div class="form-group">
+                    <label>Nomor Telephone</label>
+                    <input type="number" name="telp" class="form-control" placeholder="Masukan Nomor Telephone" required>
+                </div>
                 <button type="submit" class="btn btn-primary btn-block">Sign In</button>
                 <hr>
                 <p class="text-center">Sudah punya akun? <a href="#">Login</a> sekarang!</p>
