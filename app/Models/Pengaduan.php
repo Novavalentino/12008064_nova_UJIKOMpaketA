@@ -11,4 +11,8 @@ class Pengaduan extends Model
     protected $table = 'pengaduan';
     protected $primaryKey = 'id_pengaduan';
     protected $fillable = ['judul_laporan', 'tgl_pengaduan', 'nik', 'isi_laporan', 'foto', 'status'];
+    public function masyarakat(){
+        return $this->hasOne('App\Models\Masyarakat', 'id', 'id');
+    }
+    
 }

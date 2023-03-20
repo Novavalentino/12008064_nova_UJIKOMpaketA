@@ -11,4 +11,8 @@ class Masyarakat extends Model
     use HasFactory;
     protected $table="masyarakat";
     protected $fillable=['nik', 'nama', 'username', 'password', 'telp',];
+
+    public function pengaduan(){
+        return $this->hasMany('App\Models\Pengaduan', 'id_pengaduan', 'id_pengaduan');
+    }
 }
