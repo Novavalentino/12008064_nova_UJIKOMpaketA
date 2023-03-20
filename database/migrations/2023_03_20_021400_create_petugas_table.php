@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('username');
             $table->string('password');
             $table->string('telp');
+            $table->enum('level', ['admin', 'petugas'])->default('petugas');
             $table->timestamps();
         });
     }

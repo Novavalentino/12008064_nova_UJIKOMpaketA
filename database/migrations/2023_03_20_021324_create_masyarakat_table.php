@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('nama');
             $table->string('username');
             $table->string('password');
-            $table->string('telp');
+            $table->string('telp',);
             $table->timestamps();
         });
     }
