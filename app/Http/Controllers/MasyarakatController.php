@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Masyarakat;
-use Illuminate\Testing\Fluent\Concerns\Hash;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 
 class MasyarakatController extends Controller
@@ -37,14 +37,16 @@ class MasyarakatController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'nik'=>'required',
-            'nama'=>'required',
-            'username'=>'required',
-            'password'=>'required',
-            'telp'=>'required',
-        ]);
-        Masyarakat::create($request->all());
+        $rules = [
+            'nik' => ['required', 'unique:masyarakat'],
+            'nama' => ['required'],
+            'username' => ['required', 'unique:masyarakat'],
+            'password' => ['required'],
+            'telp' => ['required']
+        ];
+        $validatedRequest = $request->validate($rules);
+        $validatedRequest['password'] = Hash::make($validatedRequest['password']);
+        Masyarakat::create($validatedRequest);
         return redirect('/')->with('success', 'Selamat Akun anda berhsil tersimpan, silahkan loggin untuk membuat laporan');
     }
 
