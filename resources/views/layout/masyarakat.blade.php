@@ -51,18 +51,9 @@
             <hr class="sidebar-divider">
 
             <!-- Heading -->
-            <div class="sidebar-heading">
-                Data User
-            </div>
+        
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link" href="{{url('masyarakat')}}">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Data Masyarakat</span></a>
-            </li>
-            <!-- Divider -->
-            <hr class="sidebar-divider">
 
             <!-- Heading -->
             <div class="sidebar-heading">
@@ -70,7 +61,7 @@
             </div>
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="{{url('pengaduan')}}">
+                <a class="nav-link" href="{{route('pengaduan.indexmas')}}">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Data Pengaduan</span></a>
             </li>
