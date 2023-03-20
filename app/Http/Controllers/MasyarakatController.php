@@ -14,7 +14,8 @@ class MasyarakatController extends Controller
      */
     public function index()
     {
-        //
+        $masyarakats = Masyarakat::latest()->paginate(5);
+        return view('masyarakat.index', compact('masyarakats'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -63,9 +64,10 @@ class MasyarakatController extends Controller
      * @param  \App\Models\Masyarakat  $masyarakat
      * @return \Illuminate\Http\Response
      */
-    public function edit(Masyarakat $masyarakat)
+    public function edit($id)
     {
-        //
+        $masyarakat = Masyarakat::find($id);
+        return view('masyarakat.edit', compact('masyarakat'));
     }
 
     /**
@@ -75,9 +77,18 @@ class MasyarakatController extends Controller
      * @param  \App\Models\Masyarakat  $masyarakat
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Masyarakat $masyarakat)
-    {
-        //
+    public function update(Request $request, $id)
+    {       
+        $request->validate([
+            'nik' =>'required',
+            'nama' =>'required',
+            'username' =>'required',
+            'password' =>'required',
+            'telp' =>'required',
+        ]);
+        $masyarakat = Masyarakat::where('id', $id)->first();
+        $masyarakat->update($request->all());
+        return redirect('masyarakat')->with('success', 'Berhasil Mengperbaharui Data Masyarakat');
     }
 
     /**
@@ -88,6 +99,7 @@ class MasyarakatController extends Controller
      */
     public function destroy(Masyarakat $masyarakat)
     {
-        //
+        $masyarakat ->delete();
+        return redirect()->route('masyarakat.index')->with('success', 'Sukses Hapus Data Masyarakat');
     }
 }
