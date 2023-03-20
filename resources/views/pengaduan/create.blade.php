@@ -26,7 +26,7 @@
         </div>
         <div class="col-sm-12 col-md-12 col-xs-12">
           <div class="form-group">
-            <strong>Tanggal Pengaduanx</strong>
+            <strong>Tanggal Pengaduan</strong>
             <input type="date" class="form-control" placeholder="Tanggal Laporan" name="tgl_pengaduan">
           </div>
         </div>
