@@ -5,11 +5,11 @@
     use App\Models\Masyarakat;
     use App\Models\Petugas;
     use App\Models\Pengaduan;
-    // use App\Models\Tanggapan;
+    use App\Models\Tanggapan;
     $petugas = Petugas::all()->count();
     $masyarakat = Masyarakat::all()->count();
     $pengaduan = Pengaduan::all()->count();
-    // $tanggapan = Tanggapan::all()->count();
+    $tanggapan = Tanggapan::all()->count();
 @endphp
 
 <head>
@@ -261,7 +261,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                                 Jumlah Tanggapan</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $tanggapan }}</div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-comments fa-2x text-gray-300"></i>
