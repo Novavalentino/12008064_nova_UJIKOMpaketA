@@ -83,10 +83,9 @@
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{Auth::guard('petugas')->user()->username}}</span>
-                             
+                            <a class="nav-link dropdown-toggle" href="/login" id="userDropdown" role="button"
+                                aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Login</span>  
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -108,13 +107,7 @@
                 <div class="container-fluid">
                     <!-- Content Row -->
 
-                    <div id="content"> <br>
-                        <div class="container">
-                            <section class="content">
-                                @yield('content')
-                            </section>
-                        </div>
-                    </div>
+                
 
                     <!-- Content Row -->
 

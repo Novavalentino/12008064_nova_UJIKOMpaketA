@@ -43,9 +43,7 @@
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
-                </div>
+                
                 <div class="sidebar-brand-text mx-3">Pemas Komplek Agricon </div>
             </a>
 
@@ -188,7 +186,7 @@
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800"></h1>
                         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"></i> Cetak Laporan</a>
+                                class="fas fa-download fa-sm text-white-50"></i> Cetak PDF</a>
                     </div>
 
                     <!-- Content Row -->
