@@ -7,5 +7,7 @@
         </div>
       </div>
     </div>
+    <h6>Aspirasi dan keluh kesah rakyat harus senantiasa kita tampung, oleh sebab itu dengan adanya web ini diharapkan masyarakat dari kompek agricon mampu menuangkan semua keluh kesahnya. Terimakasih</h6>
+
     
 @endsection

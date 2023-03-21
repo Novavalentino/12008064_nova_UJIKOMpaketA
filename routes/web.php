@@ -7,6 +7,7 @@ use App\Http\Controllers\MasyarakatController;
 use App\Http\Controllers\PetugasController;
 use App\Http\Controllers\PengaduanController;
 use App\Http\Controllers\TanggapanController;
+use App\Http\Controllers\LandingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +35,7 @@ Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
 //Dashboard Route
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth:petugas,masyarakat');
+Route::get('/landing', [LandingController::class, 'index'])->middleware('auth:petugas,masyarakat');
 
 //custom route
 Route::get('indexmas', [PengaduanController::class, 'indexmas'])->name('pengaduan.indexmas');
