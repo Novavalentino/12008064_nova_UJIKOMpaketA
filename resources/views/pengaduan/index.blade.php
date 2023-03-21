@@ -4,7 +4,7 @@
   <div>
     <div>
       <h2>Berikut adalah semua Keluh kesah Masyarakat wahai <strong>{{ Auth::guard('petugas')->user()->nama_petugas }}</strong> </h2>
-    </div><br><br>
+    </div>
     
   </div>
 </div>

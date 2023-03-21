@@ -1,8 +1,8 @@
 @extends('layout.masyarakat')
 @section('content')
-    <div>
-      <div>
-        <div>
+    <div class="row mt-5">
+      <div class="col-lg-12 margin-top">
+        <div class="float-end">
           <h2>Berikut adalah semua Keluh kesahmu <strong>{{ Auth::guard('masyarakat')->user()->nama }}</strong> </h2>
         </div>
       </div>
@@ -34,9 +34,12 @@
                       <button class="btn btn-warning">Diproses</button>
                       @break
                   @case('selesai')
-                      <button class="btn btn-success">Selesai</button>
-                      <button class="btn btn-success">Lihat Tanggapan?</button>
-                      <button class="btn btn-danger">Hapus Pengaduan?</button>
+                      <form action="{{ route('pengaduan.destroy', $pengaduan->id_pengaduan) }}" method="post">
+                        <a class="btn btn-info" href="{{ route('tanggapan.show', $pengaduan->id_pengaduan) }}">Lihat Tangapan?</a>
+                        @csrf @method('DELETE')
+                        <button class="btn btn-danger">Hapus Pengaduan?</button>
+                      </form>
+                      
                       @break
                   @default
                       

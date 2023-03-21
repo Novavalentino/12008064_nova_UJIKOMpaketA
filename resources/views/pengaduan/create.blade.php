@@ -32,6 +32,12 @@
         </div>
         <div class="col-sm-12 col-md-12 col-xs-12">
           <div class="form-group">
+            <strong>Waktu Pengaduan</strong>
+            <input type="time" class="form-control" placeholder="Waktu Laporan" name="waktu_laporan">
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-12 col-xs-12">
+          <div class="form-group">
             <input type="hidden" class="form-control" name="nik" value="{{ auth::guard('masyarakat')->user()->nik }}">
           </div>
         </div>

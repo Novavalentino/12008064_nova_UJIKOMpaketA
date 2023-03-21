@@ -47,6 +47,7 @@ class PengaduanController extends Controller
         $validated = $request->validate([
             'judul_laporan'=>'required',
             'tgl_pengaduan'=>'required',
+            'waktu_laporan'=>'required',
             'nik'=>'required',
             'isi_laporan'=>'required',
             'foto'=>'image|file|required',
