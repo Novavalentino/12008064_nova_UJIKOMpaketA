@@ -34,7 +34,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Pemas Agus Tailor </div>
+                <div class="sidebar-brand-text mx-3">Pemas Komplek Agricon </div>
             </a>
 
             <!-- Divider -->
