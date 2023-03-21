@@ -52,7 +52,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary btn-block">Sign In</button>
                 <hr>
-                <p class="text-center">Sudah punya akun? <a href="#">Login</a> sekarang!</p>
+                <p class="text-center">Sudah punya akun? <a href="/login">Login</a> sekarang!</p>
             </form>
         </div>
     </div>

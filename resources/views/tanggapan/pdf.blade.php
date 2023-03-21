@@ -14,21 +14,16 @@
       </div>
     </div>
   </div>
-  <table class="table table-bordered">
-    <tr>
-      <th>NIK Pelapor</th>
-      <th>Tanggal Laporan</th>
-      <th width="150px">Tanggal Tanggapan</th>
-      <th >Isi Tanggapan</th>
-      <th>ID Petugas</th>
-    </tr>
-    <tr>
-      <td>{{ $pengaduan->nik }}</td>
-      <td>{{ $pengaduan->tgl_pengaduan }} {{ $pengaduan->jam }}</td>
-      <td>{{ $tanggapan->tgl_tanggapan }}</td>
-      <td>{{ $tanggapan->tanggapan }}</td>
-      <td>{{ $tanggapan->id_petugas }}</td>
-    </tr>
-  </table>
+
+  <h4>ID Pengaduan : {{$pengaduan->id_pengaduan}}</h4>
+  <h4>Ditanggapi Oleh : {{$tanggapan->id_petugas}}</h4>
+  <h4>Diadukan Pada : {{$pengaduan->tgl_pengaduan}} pukul : {{ $pengaduan->waktu_laporan }}</h4>
+  <h4>Ditanggapi Pada : {{$tanggapan->tgl_tanggapan}}</h4>
+  <h4>Judul Laporan : {{$pengaduan->judul_laporan}}</h4>
+  <h4>Isi Laporan : {{$pengaduan->isi_laporan}}</h4>
+  <h4>Tanggapan : {{$tanggapan->tanggapan}}</h4>
+  <h4>Status : {{ $pengaduan->status }}</h4>
+
+
 </body>
 </html>

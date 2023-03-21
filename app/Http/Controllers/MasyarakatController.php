@@ -50,7 +50,7 @@ class MasyarakatController extends Controller
         $validatedRequest = $request->validate($rules);
         $validatedRequest['password'] = Hash::make($validatedRequest['password']);
         Masyarakat::create($validatedRequest);
-        return redirect('/')->with('success', 'Selamat Akun anda berhsil tersimpan, silahkan loggin untuk membuat laporan');
+        return redirect('/login')->with('success', 'Selamat Akun anda berhsil tersimpan, silahkan loggin untuk membuat laporan');
     }
 
     /**
