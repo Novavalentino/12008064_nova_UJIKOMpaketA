@@ -6,6 +6,7 @@ use App\Models\Pengaduan;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Masyarakat;
 use App\Models\Petugas;
+use App\Models\Tanggapan;
 use Illuminate\Http\Request;
 
 class PengaduanController extends Controller
@@ -107,5 +108,26 @@ class PengaduanController extends Controller
         $pengaduan = Pengaduan::find($id_pengaduan);
         $pengaduan->update(['status'=>'proses']);
         return redirect('pengaduan');
+    }
+
+    public function createtanggapan($id_pengaduan){
+        $pengaduan = Pengaduan::where('id_pengaduan', $id_pengaduan)->first();
+        $tanggapan = Tanggapan::where('id_pengaduan', $id_pengaduan)->first();
+        return view('tanggapan.create', compact('pengaduan', 'tanggapan'));
+    }
+
+    public function tanggapan(Request $request){
+        $pengaduan = Pengaduan::where('id_pengaduan', $request->id_pengaduan)->first();
+        $tanggapan = Tanggapan::where('id_pengaduan', $request->id_pengaduan)->first();
+        $input=$request->validate ([
+           'id_pengaduan'=>'required',
+           'tgl_tanggapan'=>'required',
+           'tanggapan'=>'required',
+           'id_petugas'=>'required', 
+        ]);
+        Tanggapan::create($input);
+        $pengaduan->status='selesai';
+        $pengaduan->update();
+        return redirect()->route('pengaduan.index')->with('success', 'Berhasil Memberi Tanggapan');
     }
 }
