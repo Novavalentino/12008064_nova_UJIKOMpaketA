@@ -16,7 +16,7 @@ class MasyarakatController extends Controller
      */
     public function index()
     {
-        $masyarakats = Masyarakat::latest()->paginate(5);
+        $masyarakats = Masyarakat::latest()->paginate(10);
         return view('masyarakat.index', compact('masyarakats'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 

@@ -14,8 +14,8 @@ class PetugasController extends Controller
      */
     public function index()
     {
-        $petugass = Petugas::latest()->paginate(5);
-        return view('petugas.index', compact('petugass'))->with('i', (request()->input('page', 1) - 1) * 5);
+        $petugass = Petugas::latest()->paginate(10);
+        return view('petugas.index', compact('petugass'))->with('i', (request()->input('page', 1) - 1) * 10);
     }
 
     /**

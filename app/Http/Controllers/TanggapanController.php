@@ -17,7 +17,7 @@ class TanggapanController extends Controller
      */
     public function index()
     {
-        //
+        $tanggapans = Tanggapan::latest()->paginate(10);
     }
 
     /**
@@ -27,8 +27,7 @@ class TanggapanController extends Controller
      */
     public function create(Request $request, $id_pengaduan)
     {
-        $pengaduans = Pengaduan::where('id_pengaduan', $id_pengaduan)->first();
-        return view('tanggapan.create', compact('pengaduans'));
+        //
     }
 
     /**

@@ -18,12 +18,12 @@ class PengaduanController extends Controller
      */
     public function index()
     {
-        $pengaduans = Pengaduan::latest()->paginate(5);
-        return view('pengaduan.index', compact('pengaduans'))->with('i', (request()->input('page', 1)-1)*5);
+        $pengaduans = Pengaduan::latest()->paginate(1);
+        return view('pengaduan.index', compact('pengaduans'))->with('i', (request()->input('page', 1)-1)*10);
     }
     public function indexmas(){
         $pengaduans = Pengaduan::where('nik', Auth::guard('masyarakat')->user()->nik)->get();
-        return view('pengaduan.masyarakat', compact('pengaduans'))->with('i', (request()->input('page', 1)-1)*5);
+        return view('pengaduan.masyarakat', compact('pengaduans'))->with('i', (request()->input('page', 1)-1)*10);
     }
 
     /**
