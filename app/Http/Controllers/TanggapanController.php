@@ -7,6 +7,7 @@ use App\Models\Tanggapan;
 use App\Models\Petugas;
 use App\Models\Pengaduan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TanggapanController extends Controller
 {
@@ -19,6 +20,10 @@ class TanggapanController extends Controller
     {
         $tanggapans = Tanggapan::latest()->paginate(10);
         return view('tanggapan.index', compact('tanggapans'))->with('i', (request()->input('page', 1)-1)*10);
+    }
+    public function masindex(){
+        $tanggapans = Tanggapan::latest()->paginate(10);
+        return view('tanggapan.masindex', compact('tanggapans'))->with('i', (request()->input('page', 1)-1)*10);
     }
 
     /**
@@ -48,9 +53,11 @@ class TanggapanController extends Controller
      * @param  \App\Models\Tanggapan  $tanggapan
      * @return \Illuminate\Http\Response
      */
-    public function show(Tanggapan $tanggapan)
+    public function show($id_pengaduan)
     {
-        //
+        $pengaduan = Pengaduan::where('id_pengaduan', $id_pengaduan)->first();
+        $tanggapan = Tanggapan::where('id_pengaduan', $id_pengaduan)->first();
+        return view('tanggapan.masyarakat', compact('pengaduan', 'tanggapan'));
     }
 
     /**

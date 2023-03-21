@@ -39,6 +39,7 @@ Route::get('/landing', [LandingController::class, 'index'])->middleware('auth:pe
 
 //custom route
 Route::get('indexmas', [PengaduanController::class, 'indexmas'])->name('pengaduan.indexmas');
+Route::get('masindex', [TanggapanController::class, 'masindex'])->name('tanggapan.masindex');
 Route::put('proses/{id_pengaduan}', [PengaduanController::class, 'proses'])->name('pengaduan.proses');
 Route::get('/createtanggapan/{id}', [PengaduanController::class, 'createtanggapan'])->name('pengaduan.createtanggapan');
 Route::post('/pengaduantanggapan', [PengaduanController::class, 'tanggapan'])->name('pengaduan.tanggapan');

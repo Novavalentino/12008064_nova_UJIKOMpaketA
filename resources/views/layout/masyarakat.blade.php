@@ -66,7 +66,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="{{route('tanggapan.masindex')}}">
+                <a class="nav-link" href="{{route('pengaduan.masindex')}}">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Data Tanggapan</span></a>
             </li>
