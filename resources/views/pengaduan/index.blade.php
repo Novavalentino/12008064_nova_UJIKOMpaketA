@@ -4,9 +4,16 @@
   <div>
     <div>
       <h2>Berikut adalah semua Keluh kesah Masyarakat wahai <strong>{{ Auth::guard('petugas')->user()->nama_petugas }}</strong> </h2>
-    </div>
+    </div><br><br>
+    
   </div>
 </div>
+
+@if ($message = Session::get('success'))
+    <div class="alert alert-success">
+      <p>{{ $message }}</p>
+    </div>
+@endif
 <table class="table table-bordered">
   <tr>
     <th>No</th>
@@ -36,7 +43,11 @@
               </form>
               @break
             @case('proses')
-                <a href="{{ route('tanggapan.create', $pengaduan->id_pengaduan) }}" class="btn btn-warning">Tanggapi</a>
+              {{-- <form href="{{ route(tanggapan.create) }}" method="POST">
+                @csrf @method('GET')
+                <button class="btn btn-warning">Tanggapi</button>
+              </form> --}}
+                <a href="{{ route('pengaduan.createtanggapan', $pengaduan->id_pengaduan) }}" class="btn btn-warning" method="">Tanggapi</a>
               @break
             @case('selesai')
                 <a href="#" class="btn btn-primary">Selesai</a>
