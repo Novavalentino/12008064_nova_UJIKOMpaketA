@@ -50,7 +50,7 @@
                 <a href="{{ route('pengaduan.createtanggapan', $pengaduan->id_pengaduan) }}" class="btn btn-warning" method="">Tanggapi</a>
               @break
             @case('selesai')
-                <a href="#" class="btn btn-primary">Selesai</a>
+                <a href="{{ route('tanggapan.show', $pengaduan->id_pengaduan) }}" class="btn btn-primary">Lihat Tanggapan</a>
               @break
             @default
               

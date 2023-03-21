@@ -1,4 +1,4 @@
-@extends('layout.masyarakat')
+@extends('layout.tanggapan')
 @section('content')
     <div class="row mt-5">
       <div class="col-lg-12 margin-top">
@@ -7,6 +7,7 @@
         </div>
         <div>
           <a class="btn btn-primary" href="{{ route('pengaduan.indexmas') }}">Kembali?</a>
+          <a target="_blank" href="{{ route('tanggapan.adminshow', $pengaduan->id_pengaduan) }}" class="btn btn-success">Cetak </a>
         </div>
       </div>
     </div>

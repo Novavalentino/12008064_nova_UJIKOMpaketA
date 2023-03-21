@@ -32,7 +32,7 @@
             <td>{{ $tanggapan->id_petugas }}</td>
             <td>
               <form action="{{ route('tanggapan.destroy', $tanggapan->id_tanggapan) }}" method="POST">
-                <a class="btn btn-primary" href="{{ route('tanggapan.edit', $tanggapan->id_tanggapan) }}">Edit</a>
+                
                 @csrf @method('DELETE')
                 {{-- <button type="submit" class="btn btn-danger">Hapus</button> --}}
               </form>

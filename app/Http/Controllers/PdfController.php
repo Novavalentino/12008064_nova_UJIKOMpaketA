@@ -1,25 +1,26 @@
 <?php
 
 namespace App\Http\Controllers;
-use Barryvdh\DomPDF\Facade\Pdf;
-use App\Models\Masyarakat;
-use App\Models\Petugas;
-use App\Models\Tanggapan;
-use App\Models\Pengaduan;
 
 use Illuminate\Http\Request;
+use PDF;
 
-class PdfController extends Controller
+class PDFController extends Controller
 {
-    // public function cetak(){
-    //    $masyarakat = Masyarakat::all();
-    //    $petugas = Petugas::all();
-    //    $tanggapan = Tanggapan::all();
-    //    $pengaduan = Pengaduan::all();
-
- 
-    //    $pdf = Pdf::loadView('pdf.invoice', $data);
-    //    return $pdf->download('invoice.pdf');
-    // }
-    
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $data = [
+            'title' => 'Welcome to Tutsmake.com',
+            'date' => date('m/d/Y')
+        ];
+           
+        // $pdf = PDF::loadView('testPDF', $data);
+     
+        // return $pdf->download('tutsmake.pdf');
+    }
 }

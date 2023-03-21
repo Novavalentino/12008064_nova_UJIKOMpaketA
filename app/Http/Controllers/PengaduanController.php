@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use PDF;
 use App\Models\Pengaduan;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Masyarakat;
@@ -135,4 +136,6 @@ class PengaduanController extends Controller
         $pengaduan->update();
         return redirect()->route('pengaduan.index')->with('success', 'Berhasil Memberi Tanggapan');
     }
+
+    
 }

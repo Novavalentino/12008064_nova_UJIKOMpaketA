@@ -59,6 +59,13 @@ class TanggapanController extends Controller
         $tanggapan = Tanggapan::where('id_pengaduan', $id_pengaduan)->first();
         return view('tanggapan.masyarakat', compact('pengaduan', 'tanggapan'));
     }
+    public function adminshow($id_pengaduan)
+    {
+        $pengaduan = Pengaduan::where('id_pengaduan', $id_pengaduan)->first();
+        $tanggapan = Tanggapan::where('id_pengaduan', $id_pengaduan)->first();
+        return view('tanggapan.pdf', compact('pengaduan', 'tanggapan'));
+    }
+    
 
     /**
      * Show the form for editing the specified resource.
