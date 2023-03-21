@@ -25,9 +25,10 @@ class TanggapanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create(Request $request, $id_pengaduan)
     {
-        return view('tanggapan.create');
+        $pengaduans = Pengaduan::where('id_pengaduan', $id_pengaduan)->first();
+        return view('tanggapan.create', compact('pengaduans'));
     }
 
     /**
@@ -38,7 +39,7 @@ class TanggapanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
