@@ -26,6 +26,7 @@ class LoginController extends Controller
             $request->session()->regenerate();
             return redirect('dashboard');
         }
+        return redirect('/')->with('error', 'Tidak Bisa Login');
     }
 
     public function logout(Request $request){

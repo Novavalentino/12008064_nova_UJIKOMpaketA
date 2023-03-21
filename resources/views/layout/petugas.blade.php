@@ -271,9 +271,7 @@
                             </div>
                         </div>
                     </div>
-
                     <!-- Content Row -->
-
                     <div id="content"> <br>
                         <div class="container">
                             <section class="content">

@@ -22,6 +22,13 @@
                     <p>{{ $message }}</p>
                 </div>
             @endif
+            @if ($errors->any())
+               <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+               </ul>
+            @endif
             <form action="/login" method="post">
             @csrf
                 <div class="form-group">

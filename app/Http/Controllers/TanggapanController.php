@@ -18,6 +18,7 @@ class TanggapanController extends Controller
     public function index()
     {
         $tanggapans = Tanggapan::latest()->paginate(10);
+        return view('tanggapan.index', compact('tanggapans'))->with('i', (request()->input('page', 1)-1)*10);
     }
 
     /**
@@ -58,9 +59,10 @@ class TanggapanController extends Controller
      * @param  \App\Models\Tanggapan  $tanggapan
      * @return \Illuminate\Http\Response
      */
-    public function edit(Tanggapan $tanggapan)
+    public function edit($id_tanggapan)
     {
-        //
+        $tanggapan = Tanggapan::find($id_tanggapan);
+        return view('tanggapan.edit', compact('tanggapan'));
     }
 
     /**
