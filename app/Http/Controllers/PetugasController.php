@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Petugas;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 
 class PetugasController extends Controller
@@ -36,15 +37,16 @@ class PetugasController extends Controller
      */
     public function store(Request $request)
     {
-        $request -> validate([
-            'nama_petugas'=>'required',
-            'username'=>'required',
-            'password'=>'required',
-            'telp'=>'required',
-            'level'=>'required',
-        ]);
-
-        Petugas::create($request->all());
+        $rules = [
+            'nama_petugas' => ['required'],
+            'username' => ['required',],
+            'password' => ['required'],
+            'telp' => ['required'],
+            'level'=>['required'],
+        ];
+        $validatedRequest = $request->validate($rules);
+        $validatedRequest['password'] = Hash::make($validatedRequest['password']);
+        Petugas::create($validatedRequest);
         return redirect()->route('petugas.index')->with('success', 'Berhasil Menambahkan Data Petugas');
     }
 
