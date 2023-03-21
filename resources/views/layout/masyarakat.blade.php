@@ -60,7 +60,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{route('pengaduan.indexmas')}}">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Data Pengaduan</span></a>
+                    <span>Data Pengaduanmu</span></a>
             </li>
 
 
@@ -68,7 +68,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{route('pengaduan.masindex')}}">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Data Tanggapan</span></a>
+                    <span>Semua Pengaduan</span></a>
             </li>
 
             <!-- Divider -->
