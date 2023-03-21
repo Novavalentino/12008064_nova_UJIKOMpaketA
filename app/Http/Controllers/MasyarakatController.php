@@ -43,6 +43,8 @@ class MasyarakatController extends Controller
             'nama' => ['required'],
             'username' => ['required', 'unique:masyarakat'],
             'password' => ['required'],
+            'kelamin' => ['required'],
+            'alamat' => ['required'],
             'telp' => ['required']
         ];
         $validatedRequest = $request->validate($rules);

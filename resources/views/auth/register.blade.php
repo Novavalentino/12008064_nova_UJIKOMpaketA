@@ -36,6 +36,17 @@
                     <input type="password" name="password" class="form-control" placeholder="Password" required>
                 </div>
                 <div class="form-group">
+                    <label>Jenis Kelamin</label>
+                    <select name="kelamin" id="kelamin" class="form-control" required>
+                        <option value="pria"> Pria </option>
+                        <option value="wanita"> Wanita </option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label> Alamat </label>
+                    <input type="text" name="alamat" placeholder="Isikan Alamatmu" class="form-control" required>
+                </div>
+                <div class="form-group">
                     <label>Nomor Telephone</label>
                     <input type="number" name="telp" class="form-control" placeholder="Masukan Nomor Telephone" required>
                 </div>

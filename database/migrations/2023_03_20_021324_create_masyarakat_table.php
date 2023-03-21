@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('nama');
             $table->string('username');
             $table->string('password');
+            $table->enum('kelamin', ['pria', 'wanita']);
+            $table->string('alamat');
             $table->string('telp',);
             $table->timestamps();
         });

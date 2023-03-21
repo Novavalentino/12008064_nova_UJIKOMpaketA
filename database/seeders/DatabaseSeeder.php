@@ -77,6 +77,8 @@ class DatabaseSeeder extends Seeder
             'nama'=> 'Budianto',
             'username'=> 'budiBud',
             'password'=> Hash::make('Password'),
+            'kelamin'=>'pria',
+            'alamat'=>'jl.ashari jaya2',
             'telp'=> '0852123456',
         ]);
         
@@ -85,6 +87,8 @@ class DatabaseSeeder extends Seeder
             'nama'=> 'Makima',
             'username'=> 'makiMa',
             'password'=> Hash::make('Password'),
+            'kelamin'=>'wanita',
+            'alamat'=>'jl.ashari jaya1',
             'telp'=> '0852789456',
         ]);
 
@@ -93,6 +97,8 @@ class DatabaseSeeder extends Seeder
             'nama'=> 'ani',
             'username'=> 'anuani',
             'password'=> Hash::make('Password'),
+            'kelamin'=>'wanita',
+            'alamat'=>'jl.ashari jaya2',
             'telp'=> '0852456123',
         ]);
     }
