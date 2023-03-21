@@ -5,6 +5,9 @@
         <div class="float-start">
           <h2>Apa tanggapanmu wahai <strong>{{ Auth::guard('petugas')->user()->nama_petugas }}</strong> </h2>
         </div>
+        <div>
+          <a class="btn btn-primary" href="{{ route('pengaduan.index') }}">Kembali</a>
+        </div>
       </div>
     </div>
     @if ($errors->any())
@@ -17,11 +20,16 @@
           </ul>
       </div>
     @endif
-    <form action="{{ route('tanggapan.store') }}" method="POST">
+    <form action="{{ route('pengaduan.tanggapan') }}" method="POST"> @csrf
       <div class="row">
         <div class="col-sm-12 col-md-12 col-xs-12">
           <div class="form-group">
-            {{-- <input type="hidden" class="form-control" name="id_tanggapan" value="{{ $pengaduan->id_pengaduan }}"> --}}
+            <h5>Judul Laporan : <strong>{{ $pengaduan->judul_laporan }}</strong> </h5>          
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-12 col-xs-12">
+          <div class="form-group">
+            <input type="hidden" class="form-control" name="id_pengaduan" value="{{ $pengaduan->id_pengaduan }}">
           </div>
         </div>
         <div class="col-sm-12 col-md-12 col-xs-12">
